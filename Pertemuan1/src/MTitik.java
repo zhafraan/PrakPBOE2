@@ -13,5 +13,10 @@ public class MTitik {
 
         T1.geser(3, 4);         // Menggeser T1 sejauh (3,4)
         T1.printTitik();        // Menampilkan koordinat T1 setelah digeser
+        Titik T2 = T1;
+        T2.printTitik();        // Menampilkan koordinat T2 (sama dengan T1)
+        T1.setAbsis(10);         // Mengubah absis T1 dengan nilai 10
+        T1.setOrdinat(10);       // Mengubah ordinat T1 dengan nilai 10
+        T2.printTitik();        // Menampilkan koordinat T2 setelah T1 diubah (sama dengan T1)
     }
 }
