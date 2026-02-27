@@ -18,5 +18,6 @@ public class MTitik {
         T1.setAbsis(10);         // Mengubah absis T1 dengan nilai 10
         T1.setOrdinat(10);       // Mengubah ordinat T1 dengan nilai 10
         T2.printTitik();        // Menampilkan koordinat T2 setelah T1 diubah (sama dengan T1)
+        
     }
 }

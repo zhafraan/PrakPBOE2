@@ -45,4 +45,56 @@ public class Titik {
     void printTitik() {
         System.out.println("Titik (" + absis + "," + ordinat + ")");
     }
+
+    //Mencari Kuadran dari titik
+    int getkuadran() {
+        if (absis > 0 && ordinat > 0) {
+            return 1; // Kuadran I
+        } else if (absis < 0 && ordinat > 0) {
+            return 2; // Kuadran II
+        } else if (absis < 0 && ordinat < 0) {
+            return 3; // Kuadran III
+        } else if (absis > 0 && ordinat < 0) {
+            return 4; // Kuadran IV
+        } else {
+            return 0; 
+        }
+    }
+
+    //Mencari jarak dari titik pusat
+    double getjarakPusat() {
+        return Math.sqrt(absis * absis + ordinat * ordinat);
+    }
+
+    //Mencari jarak antara titik ini 
+    double getjarak(Titik T) {
+        double dx =this. absis - T.getAbsis();
+        double dy = this.ordinat - T.getOrdinat();
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+    //Refleksi titik terhadap sumbu X
+    void refleksiX() {
+        ordinat = -ordinat;
+    }
+    //Refleksi titik terhadap sumbu Y
+    void refleksiY() {
+        absis = -absis;
+    }
+
+    // getRefleksiX()
+    Titik getRefleksiX() {
+        Titik refleksi = new Titik();
+        refleksi.setAbsis(absis);
+        refleksi.setOrdinat(-ordinat);
+        return refleksi;
+        }
+
+    // getRefleksiY() 
+    Titik getRefleksiY() {
+        Titik refleksi = new Titik();
+        refleksi.setAbsis(-absis);
+        refleksi.setOrdinat(ordinat);
+        return refleksi;
+    }
+   
 } // end class Titik
