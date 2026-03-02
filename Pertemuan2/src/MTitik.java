@@ -1,3 +1,8 @@
+/* Nama File    : MTitik.java
+ * Deskripsi    : Main class untuk menjalankan class Titik
+ * Pembuat      : Aqiatillah Rezi Zhafran/24060124140124
+ * Tanggal      : 27 Februari 2026
+ */
 public class MTitik {
     public static void main(String[] args) {
         // Membuat objek Titik T1 dan mengatur koordinatnya

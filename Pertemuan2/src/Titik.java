@@ -1,9 +1,10 @@
 /* Nama File    : Titik.java
  * Deskripsi    : Berisi atribut dan method dalam class Titik
  * Pembuat      : Aqiatillah Rezi Zhafran/24060124140124
- * Tanggal      : 27 Februari 2025
+ * Tanggal      : 27 Februari 2026
  */
 public class Titik {
+    
     /****** ATRIBUT ******/
     double absis;
     double ordinat;
@@ -13,6 +14,11 @@ public class Titik {
     Titik() {
         absis = 0;
         ordinat = 0;
+    }
+    // Konstruktor untuk membuat titik dengan koordinat (x,y)
+    Titik(double x, double y) {
+        absis = x;
+        ordinat = y;
     }
 
     // Mengembalikan nilai absis
