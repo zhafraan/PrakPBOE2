@@ -5,9 +5,9 @@
  */
 
 public class Garis {
-    public Titik titikAwal;
-    public Titik titikAkhir;
-    public static int counterGaris = 0;
+    private Titik titikAwal;
+    private Titik titikAkhir;
+    private static int counterGaris = 0;
 
     // Konstruktor tanpa parameter
     public Garis() {
