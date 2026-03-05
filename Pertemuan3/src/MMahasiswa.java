@@ -1,3 +1,7 @@
+/* Nama File    : MMahasiswa.java
+ * Deskripsi    : Main class untuk menjalankan program Mahasiswa
+ * Pembuat      : Aqiatillah Rezi Zhafran/24060124140124
+ * Tanggal      : 5 Maret 2026*/    
 public class MMahasiswa {
 
     public static void main(String[] args) {

@@ -1,4 +1,9 @@
+/* Nama File    : Mahasiswa.java
+ * Deskripsi    : Berisi atribut dan method dalam class Mahasiswa
+ * Pembuat      : Aqiatillah Rezi Zhafran/24060124140124
+ * Tanggal      : 5 Maret 2026*/
 import java.util.ArrayList;
+
 public class Mahasiswa {
     /*******************Atribut***********************/
     private String nim;
