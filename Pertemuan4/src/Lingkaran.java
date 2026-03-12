@@ -11,15 +11,9 @@ public class Lingkaran extends BangunDatar {
         this.Jari = 0;
     }
     // Konstruktor Lingkaran dengan parameter
-<<<<<<< HEAD
     public Lingkaran(double diameter, String warna, String border) {
         super(0, warna, border);
         this.Jari = diameter / 2;
-=======
-    public Lingkaran(double jari, String warna, String border) {
-        super(0, warna, border);
-        this.Jari = jari;
->>>>>>> a25d7437d8d862ce468d4130a2bde1e129d03b31
     }
     // Selektor untuk mengembalikan jari-jari
     public double getJari() {
