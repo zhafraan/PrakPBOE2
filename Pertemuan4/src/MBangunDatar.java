@@ -1,7 +1,11 @@
+/* Nama File    : MBangunDatar.java
+ * Deskripsi    : Main class untuk menjalankan program Bangun Datar
+ * Pembuat      : Aqiatillah Rezi Zhafran/24060124140124
+ * Tanggal      : 12 Maret 2026 */
 public class MBangunDatar {
     public static void main(String[] args) {
         // Membuat objek Persegi
-        Persegi persegi1 = new Persegi(5, "merah", "hitam");
+        Persegi persegi1 = new Persegi(16, "merah", "hitam");
         System.out.println("Informasi Persegi:");
         persegi1.printinfo();
         persegi1.getLuas();
