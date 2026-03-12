@@ -1,4 +1,10 @@
+/* Nama File    : BangunDatar.java
+ * Deskripsi    : Berisi atribut dan method dalam class Bangun Datar(superclass)
+ * Pembuat      : Aqiatillah Rezi Zhafran/24060124140124
+ * Tanggal      : 12 Maret 2026 */
+
 public class BangunDatar {
+    // Atribut untuk menyimpan jumlah sisi, warna, dan border
     protected int jmlSisi;
     protected String warna;
     protected String border;

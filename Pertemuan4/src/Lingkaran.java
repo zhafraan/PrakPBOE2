@@ -1,14 +1,19 @@
-public class Lingkaran extends BangunDatar {
-    private double Jari;
+/* Nama File    : Lingkaran.java
+ * Deskripsi    : Berisi atribut dan method dalam class Lingkaran(subclass)
+ * Pembuat      : Aqiatillah Rezi Zhafran/24060124140124
+ * Tanggal      : 12 Maret 2026 */
 
+public class Lingkaran extends BangunDatar {
+    // Atribut jari-jari lingkaran
+    private double Jari;
     // Konstruktor Lingkaran tanpa parameter
     public Lingkaran() {
         this.Jari = 0;
     }
     // Konstruktor Lingkaran dengan parameter
-    public Lingkaran(double JariJari, String warna, String border) {
+    public Lingkaran(double jari, String warna, String border) {
         super(0, warna, border);
-        this.Jari = JariJari;
+        this.Jari = jari;
     }
     // Selektor untuk mengembalikan jari-jari
     public double getJari() {
