@@ -30,7 +30,7 @@ public class Petani extends Manusia implements Pajak {
     //Method untuk menghitung pajak dan masa kerja
     @Override
     public double hitungPajak(){
-        return 0.0 * pendapatan;
+        return 0.0 ; //Petani tidak dikenakan pajak
     }
 
     public int hitungMasaKerja(){
