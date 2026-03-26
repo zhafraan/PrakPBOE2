@@ -2,12 +2,12 @@ import java.time.LocalDate;
 public class Mmanusia {
     public static void main(String[] args) {
         // Inisialisasi objek sesuai contoh modul
-        PNS p1 = new PNS("Satriyo", LocalDate.of(2006, 4, 1), "Jl. Seroja", 15000000, "198302032006041002");
-        Pengusaha pe1 = new Pengusaha("Adhy", LocalDate.of(2000, 1, 1), "Jl. Air", 55000000, "2000-556-773-212");
-        Petani pt1 = new Petani("Nugraha", LocalDate.of(1977, 1, 9), "Jl. Bunga 9 Tembalang", 5000000, "Wonogiri");
-        PNS p2 = new PNS("Panji", LocalDate.of(2010, 4, 1), "Tembalang", 10000000, "198004212010041002");
+        PNS p1 = new PNS("Budhi", LocalDate.of(2006, 4, 1), "Jl. Tembalang", 15000000, "198302032006041002");
+        Pengusaha pe1 = new Pengusaha("Aris", LocalDate.of(2000, 1, 1), "Jl. Gondang", 55000000, "2000-556-773-212");
+        Petani pt1 = new Petani("Santoso", LocalDate.of(1977, 1, 9), "Jl. Bulusan 9 Tembalang", 5000000, "Wonogiri");
+        PNS p2 = new PNS("Ari", LocalDate.of(2010, 4, 1), "Meteseh", 10000000, "198004212010041002");
 
-        p2.setAlamat("Jl. Panorama 111 Tembalang");
+        p2.setAlamat("Jl. Tembalang selatan 35 Tembalang");
 
         // Mencetak jumlah static counter 
         System.out.println("Jumlah Manusia = " + Manusia.getCounterMns());
