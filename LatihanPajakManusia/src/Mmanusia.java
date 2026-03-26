@@ -1,3 +1,7 @@
+/* Nama File    : Mmanusia.java
+ * Deskripsi    : main class untuk menjalankan program yang berisi objek-objek dari kelas PNS, Pengusaha, dan Petani
+ * Pembuat      : Aqiatillah Rezi Zhafran/24060124140124
+ * Tanggal      : 25 Maret 2026 */
 import java.time.LocalDate;
 public class Mmanusia {
     public static void main(String[] args) {
