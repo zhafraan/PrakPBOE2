@@ -2,6 +2,8 @@
  * Pembuat      : Aqiatillah Rezi Zhafran
  * NIM          : 24060124140124
  * Tanggal      : 30 April 2026 */
+
+package Anabul;
 public class Kembangtelon extends Kucing {
     public Kembangtelon(String nama, double bobot) { 
         super(nama, bobot); 
