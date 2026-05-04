@@ -2,6 +2,7 @@
  * Pembuat      : Aqiatillah Rezi Zhafran
  * NIM          : 24060124140124
  * Tanggal      : 30 April 2026 */
+package Anabul;
 public class Main {
     public static void main(String[] args) {
         // Ini BOLEH karena Anggora keturunan Kucing
