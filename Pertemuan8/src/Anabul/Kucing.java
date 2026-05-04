@@ -15,11 +15,9 @@ public class Kucing extends Anabul {
     public double getBobot() { 
         return bobot; 
     }
-<<<<<<< HEAD
-=======
-    
+
     public String toString() {
         return "Anggora: " + nama + " (" + bobot + " kg)";
     }
->>>>>>> Pertemuan8
+
 }
