@@ -1,0 +1,17 @@
+/* Nama File    : Datum.java
+ * Pembuat      : Aqiatillah Rezi Zhafran
+ * NIM          : 24060124140124
+ * Tanggal      : 30 April 2026 */
+
+package Anabul;
+public class Datum<T>{
+    private T isi;
+
+    public void setIsi(T isibaru) { 
+        this.isi = isibaru; 
+    }
+
+    public T getIsi() { 
+        return this.isi; 
+    }
+}
