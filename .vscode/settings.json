@@ -1,6 +1,4 @@
 {
     "java.debug.settings.onBuildFailureProceed": true,
-    "java.project.sourcePaths": [
-        "Pertemuan8/src/OperatorGenerik"
-    ]
+    "java.project.sourcePaths": []
 }
