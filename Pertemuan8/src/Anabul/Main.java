@@ -17,11 +17,8 @@ public class Main {
 
         // Ini TIDAK BOLEH karena Anabul bukan keturunan Kucing
         // Datum<Anabul> d3 = new Datum<>(); 
-        // d3.setIsi(new Anggora("Mikasa",3.2));
+        // d3.setIsi(new Anabul("Mikasa",3.2));
         // System.out.println(d3.getIsi().toString());
-        
-
-        
-       
+          
     }
 }
