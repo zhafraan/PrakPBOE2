@@ -1,4 +1,7 @@
 {
     "java.debug.settings.onBuildFailureProceed": true,
-    "java.project.sourcePaths": []
+    "java.project.sourcePaths": [
+        "PBO09_24060124140124/src"
+    ],
+    "java.project.referencedLibraries": []
 }
