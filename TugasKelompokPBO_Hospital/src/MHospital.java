@@ -213,60 +213,95 @@ public class MHospital {
                 + " | Harga: Rp" + ruanganTersedia.getPricePerNight() + "/malam");
             System.out.println();
 
-<<<<<<< Updated upstream
             // ===========================================================
-            // ================== Coercion Polymorphism ==================
+            // ================= Coercion Polymorphism ===================
             // ===========================================================
             System.out.println("******* COERCION POLYMORPHISM *******");
-
             double pajak = tagihan1.calculateTax(10);
-
-            System.out.println("Pajak Tagihan 1 : " + pajak);
+            System.out.println("Pajak Tagihan 1 (10%) : " + pajak);
             System.out.println();
 
-
-=======
-
-            // =============================================================
-            // ======================= Class Generik =======================
-            // =============================================================
+ 
+            // ===========================================================
+            // ==================== Class Generik ========================
+            // ===========================================================
             System.out.println("******* GENERIC PADA KELAS *******");
-
+ 
             // Generic untuk Doctor
             DataManager<Doctor> doctorData = new DataManager<>();
             doctorData.addData(dokter1);
             doctorData.addData(dokter2);
-
             System.out.println("Data Doctor:");
             doctorData.printSize();
-
+ 
             // Generic untuk Patient
             DataManager<Patient> patientData = new DataManager<>();
             patientData.addData(pasien1);
             patientData.addData(pasien2);
             patientData.addData(pasien3);
-
             System.out.println("Data Patient:");
             patientData.printSize();
-
             System.out.println();
 
-
-            // ==============================================================
-            // ======================= Method Generik =======================
-            // ==============================================================           
+             // ===========================================================
+            // ================ Demonstrasi Koleksi ======================
+            // ===========================================================
+            System.out.println("******* DEMONSTRASI KOLEKSI *******");
+ 
+            // Buat DataManager<Doctor> dan isi data dengan add
+            DataManager<Doctor> koleksiDokter = new DataManager<>();
+            koleksiDokter.addData(dokter1);
+            koleksiDokter.addData(dokter2);
+            koleksiDokter.addData(dokter3);
+ 
+            // tampilkan jumlah elemen setelah 3x add
+            System.out.println("Jumlah dokter setelah add (getSize) : " + koleksiDokter.getSize());
+ 
+            // akses elemen berdasarkan indeks 1-based
+            System.out.println("Dokter ke-1 (getIsi(1)) : " + koleksiDokter.getIsi(1).getName());
+            System.out.println("Dokter ke-2 (getIsi(2)) : " + koleksiDokter.getIsi(2).getName());
+            System.out.println("Dokter ke-3 (getIsi(3)) : " + koleksiDokter.getIsi(3).getName());
+ 
+            // ubah elemen pada posisi tertentu
+            Doctor dokterBaru = new Doctor("D004", "Tuti Rahayu", "P", "081299999999", "Saraf", "SIP-004");
+            System.out.println("Sebelum setIsi(2) : Dokter ke-2 = " + koleksiDokter.getIsi(2).getName());
+            koleksiDokter.setIsi(2, dokterBaru);
+            System.out.println("Setelah setIsi(2) : Dokter ke-2 = " + koleksiDokter.getIsi(2).getName());
+            koleksiDokter.setIsi(2, dokter2);
+            System.out.println("Dikembalikan      : Dokter ke-2 = " + koleksiDokter.getIsi(2).getName());
+ 
+            // tambah dokter baru di akhir koleksi
+            Doctor dokterTambahan = new Doctor("D005", "Eko Prasetyo", "L", "081288888888", "Kulit", "SIP-005");
+            koleksiDokter.addData(dokterTambahan);
+            System.out.println("Setelah add dokter baru, jumlah : " + koleksiDokter.getSize());
+            System.out.println("Elemen terakhir (getIsi(4))     : " + koleksiDokter.getIsi(koleksiDokter.getSize()).getName());
+ 
+            // hapus dan kembalikan elemen terakhir
+            Doctor dokterDihapus = koleksiDokter.deleteData();
+            System.out.println("deleteData() -> dokter dihapus  : " + dokterDihapus.getName());
+            System.out.println("Jumlah dokter setelah delete    : " + koleksiDokter.getSize());
+ 
+            // Iterasi seluruh elemen koleksi
+            System.out.println("--- Isi koleksi dokter saat ini ---");
+            for (int i = 1; i <= koleksiDokter.getSize(); i++) {
+                Doctor d = koleksiDokter.getIsi(i);
+                System.out.println("  [" + i + "] " + d.getName() + " | " + d.getSpecialization());
+            }
+            System.out.println();
+ 
+            // ===========================================================
+            // ==================== Method Generik =======================
+            // ===========================================================
             System.out.println("******* GENERIC PADA METHOD *******");
-
             hospital.printGenericData("Rumah Sakit Diponegoro");
             hospital.printGenericData(dokter1.getName());
             hospital.printGenericData(pasien1.getName());
             hospital.printGenericData(1500000);
-
             System.out.println();
-
->>>>>>> Stashed changes
+ 
         } catch (Exception e) {
             System.out.println("Error tidak terduga: " + e.getMessage());
         }
+        
     }
 }

@@ -2,7 +2,8 @@
     "java.debug.settings.onBuildFailureProceed": true,
     "java.project.sourcePaths": [
         "PBO09_24060124140124/src",
-        "Latihan"
+        "Latihan",
+        "TugasKelompokPBO_Hospital/src"
     ],
     "java.project.referencedLibraries": []
 }
