@@ -13,10 +13,15 @@ public class Hospital {
     // Atribut
     private String hospitalName;
     private String address;
+
+    // =====================================================
+    // ============== Parametric Polymorphism ==============
+    // =====================================================
     private ArrayList<Doctor> doctors;
     private ArrayList<Nurse> nurses;
     private ArrayList<Room> rooms;
     private ArrayList<Patient> patients;
+    
     // Konstruktor
     public Hospital(String hospitalName, String address) {
         this.hospitalName = hospitalName;
@@ -73,6 +78,13 @@ public class Hospital {
         System.out.println("Rooms: " + rooms.size());
         System.out.println("Patients: " + patients.size());
     }
- 
+
+    // =============================================
+    // =============== Method Generk ===============
+    // =============================================
+    // Generic method untuk menampilkan data apapun
+    public <T> void printGenericData(T data) {
+        System.out.println("Data : " + data);
+    }
   
 }

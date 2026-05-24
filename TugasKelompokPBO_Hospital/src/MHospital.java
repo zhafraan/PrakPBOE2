@@ -194,6 +194,9 @@ public class MHospital {
             tagihan3.printBill();
             System.out.println();
 
+            // ======================================================================================
+            // =============================== Polimorfisme Inclusion ===============================
+            // ======================================================================================
             System.out.println("******* PENERAPAN POLYMORPHISM *******");
             Person[] semuaOrang = { dokter1, dokter2, perawat1, perawat2, pasien1, pasien2, pasien3 };
             for (Person orang : semuaOrang) {
@@ -210,6 +213,58 @@ public class MHospital {
                 + " | Harga: Rp" + ruanganTersedia.getPricePerNight() + "/malam");
             System.out.println();
 
+<<<<<<< Updated upstream
+            // ===========================================================
+            // ================== Coercion Polymorphism ==================
+            // ===========================================================
+            System.out.println("******* COERCION POLYMORPHISM *******");
+
+            double pajak = tagihan1.calculateTax(10);
+
+            System.out.println("Pajak Tagihan 1 : " + pajak);
+            System.out.println();
+
+
+=======
+
+            // =============================================================
+            // ======================= Class Generik =======================
+            // =============================================================
+            System.out.println("******* GENERIC PADA KELAS *******");
+
+            // Generic untuk Doctor
+            DataManager<Doctor> doctorData = new DataManager<>();
+            doctorData.addData(dokter1);
+            doctorData.addData(dokter2);
+
+            System.out.println("Data Doctor:");
+            doctorData.printSize();
+
+            // Generic untuk Patient
+            DataManager<Patient> patientData = new DataManager<>();
+            patientData.addData(pasien1);
+            patientData.addData(pasien2);
+            patientData.addData(pasien3);
+
+            System.out.println("Data Patient:");
+            patientData.printSize();
+
+            System.out.println();
+
+
+            // ==============================================================
+            // ======================= Method Generik =======================
+            // ==============================================================           
+            System.out.println("******* GENERIC PADA METHOD *******");
+
+            hospital.printGenericData("Rumah Sakit Diponegoro");
+            hospital.printGenericData(dokter1.getName());
+            hospital.printGenericData(pasien1.getName());
+            hospital.printGenericData(1500000);
+
+            System.out.println();
+
+>>>>>>> Stashed changes
         } catch (Exception e) {
             System.out.println("Error tidak terduga: " + e.getMessage());
         }

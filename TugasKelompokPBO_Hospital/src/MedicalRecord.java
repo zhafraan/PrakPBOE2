@@ -12,7 +12,12 @@ import java.util.ArrayList;
 public class MedicalRecord {
     // Atribut
     private String recordID;
+
+    // ===============================================
+    // =========== Parametric Polymorphism ===========
+    // ===============================================
     private ArrayList<String> entries;
+
     // Konstruktor
     public MedicalRecord(String recordID) {
         this.recordID = recordID;
@@ -33,6 +38,10 @@ public class MedicalRecord {
     public String getRecordId() {
         return recordID;
     }
+
+    // ===============================================
+    // =========== Parametric Polymorphism ===========
+    // ===============================================
     // Selektor untuk mengambil semua entri rekam medis
     public ArrayList<String> getEntries() {
         return entries;
