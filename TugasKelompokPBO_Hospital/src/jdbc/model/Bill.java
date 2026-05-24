@@ -1,3 +1,4 @@
+package jdbc.model;
 // Nama File    : Bill.java
 // Deskripsi    : class untuk mengelola tagihan pasien di rumah sakit
 // Pembuat      : Kelompok 6
