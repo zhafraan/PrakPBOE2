@@ -194,6 +194,9 @@ public class MHospital {
             tagihan3.printBill();
             System.out.println();
 
+            // ======================================================================================
+            // =============================== Polimorfisme Inclusion ===============================
+            // ======================================================================================
             System.out.println("******* PENERAPAN POLYMORPHISM *******");
             Person[] semuaOrang = { dokter1, dokter2, perawat1, perawat2, pasien1, pasien2, pasien3 };
             for (Person orang : semuaOrang) {
@@ -209,6 +212,17 @@ public class MHospital {
             System.out.println("Ruangan tersedia: " + ruanganTersedia.getRoomType()
                 + " | Harga: Rp" + ruanganTersedia.getPricePerNight() + "/malam");
             System.out.println();
+
+            // ===========================================================
+            // ================== Coercion Polymorphism ==================
+            // ===========================================================
+            System.out.println("******* COERCION POLYMORPHISM *******");
+
+            double pajak = tagihan1.calculateTax(10);
+
+            System.out.println("Pajak Tagihan 1 : " + pajak);
+            System.out.println();
+
 
         } catch (Exception e) {
             System.out.println("Error tidak terduga: " + e.getMessage());

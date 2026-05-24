@@ -23,13 +23,15 @@ public abstract class Person {
     }
     // Method abstrak untuk mendapatkan peran (role) dari person
     public abstract String getRole();
- 
-    // Overloading 
+    // ======================================================================
+    // ============================ Overloading  ============================
+    // ======================================================================
     public void getInfo() {
         System.out.println(id + " - " + name);
     }
- 
-    // Overloading lengkap
+    // =====================================================================
+    // ======================== Overloading lengkap ========================
+    // =====================================================================
     public void getInfo(boolean detail) {
         if (detail) {
             System.out.println("ID: " + id);

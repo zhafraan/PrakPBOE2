@@ -15,6 +15,10 @@ public class Doctor extends Person implements Schedulable {
     // Atribut
     private String specialization;
     private String licenseNumber;
+
+    // =====================================================================
+    // ====================== Parametric Polymorphism ======================
+    // =====================================================================
     private HashMap<LocalDate, ArrayList<String>> schedule;
     // Konstruktor
     public Doctor(String id, String name, String gender, String phoneNumber,

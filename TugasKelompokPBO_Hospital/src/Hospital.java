@@ -13,10 +13,15 @@ public class Hospital {
     // Atribut
     private String hospitalName;
     private String address;
+
+    // =====================================================
+    // ============== Parametric Polymorphism ==============
+    // =====================================================
     private ArrayList<Doctor> doctors;
     private ArrayList<Nurse> nurses;
     private ArrayList<Room> rooms;
     private ArrayList<Patient> patients;
+    
     // Konstruktor
     public Hospital(String hospitalName, String address) {
         this.hospitalName = hospitalName;

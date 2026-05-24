@@ -13,8 +13,13 @@ public class Bill {
     // Atribut
     private String billID;
     private Patient patient;
+
+    // =======================================
+    // ======= Parametric Polymorphism =======
+    // =======================================
     private ArrayList<String> itemDescriptions;
     private ArrayList<Double> itemCosts;
+
     private double totalAmount;
     private boolean isPaid;
     // Konstruktor
@@ -26,8 +31,9 @@ public class Bill {
         this.totalAmount = 0;
         this.isPaid = false;
     }
- 
-    // Overloading deskripsi dan biaya langsung
+    // ==============================================================================================
+    // ========================== Overloading deskripsi dan biaya langsung ==========================
+    // ==============================================================================================
     public void addItem(String description, double cost) 
         throws Exception {
         if (cost < 0 || description == null || description.isEmpty()) {
@@ -37,8 +43,9 @@ public class Bill {
         itemCosts.add(cost);
         totalAmount += cost;
     }
- 
-    // Overloading  berdasarkan harga satuan dan jumlah
+    // ==============================================================================================
+    // ====================== Overloading  berdasarkan harga satuan dan jumlah ======================
+    // ==============================================================================================
     public void addItem(String description, double unitCost, int quantity) throws Exception {
         if (quantity <= 0) {
             throw new Exception("Quantity harus lebih dari 0");
@@ -74,6 +81,15 @@ public class Bill {
     // Selektor untuk mengambil ID Bill
     public String getBillID() {
         return billID;
+    }
+
+    // =============================================
+    // =========== Coercion Polymorphism ===========
+    // =============================================
+    // Method untuk menambahkan pajak
+    public double calculateTax(int taxPercent) {
+        double tax = totalAmount * taxPercent / 100;
+        return tax;
     }
 }
  

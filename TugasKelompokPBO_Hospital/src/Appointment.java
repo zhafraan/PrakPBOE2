@@ -39,8 +39,9 @@ public class Appointment {
     public void cancel() {
         status = "Dibatalkan";
     }
- 
-    // Overloading
+    // ========================================================
+    // ====================== Overloading =====================
+    // ========================================================
     public void printInfo() {
         System.out.println("Appointment ID: " + appointmentID);
         System.out.println("Patient: " + patient.getName());
@@ -49,8 +50,9 @@ public class Appointment {
         System.out.println("Time: " + timeSlot);
         System.out.println("Status: " + status);
     }
- 
-    // Overloading dengan detail dokter
+    // ========================================================
+    // =========== Overloading dengan detail dokter ===========
+    // ========================================================
     public void printInfo(boolean withDoctorDetail) {
         printInfo();
         if (withDoctorDetail) {

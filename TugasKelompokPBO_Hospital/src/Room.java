@@ -18,7 +18,12 @@ public class Room implements Schedulable {
     private int capacity;
     private int currentOccupancy;
     private double pricePerNight;
+
+    // ===============================================================================
+    // =========================== Parametric Polymorphism ===========================
+    // ===============================================================================
     private HashMap<LocalDate, ArrayList<String>> reservations;
+    
     // Konstruktor
     public Room(String roomID, String roomType, int capacity, double pricePerNight) {
         assert capacity > 0 : "Capacity harus > 0";
