@@ -1,5 +1,7 @@
+package jdbc.program;
+
 // Nama File    : MHospital.java
-// Deskripsi    : Main Program Sistem Manajemen Rumah Sakit
+// Deskripsi    : Main Program Sistem Manajemen Rumah Sakit dengan Persistensi DAO
 // Pembuat      : Kelompok 6
 // Anggota      : Aditya Sultonul Ulya - 240601214120006
 //                Aqiatillah Rezi Zhafran - 24060124140124
@@ -9,37 +11,37 @@
 // Tanggal      : 30 Maret 2026
 
 import java.time.LocalDate;
+import jdbc.model.*;
+import jdbc.service.*;
 
 public class MHospital {
     public static void main(String[] args) {
         try {
+            // =================================================================
+            // ININISALISASI KOMPONEN PERSISTENSI DAO (Sesuai Modul Praktikum)
+            // =================================================================
+            DAOManager manager = new DAOManager();
+            manager.setHospitalDAO(new MySQLHospitalDAO());
+
             // MEMBUAT OBJEK RUMAH SAKIT
             Hospital hospital = new Hospital("RS Diponegoro", "Jl. Kesehatan No.1, Semarang");
+            
             // Dokter 1: Spesialis Jantung
-            Doctor dokter1 = new Doctor("D001", "Ahmad Fauzi","L","081234567890","Jantung",
-                "SIP-001");
+            Doctor dokter1 = new Doctor("D001", "Ahmad Fauzi","L","081234567890","Jantung", "SIP-001");
             // Dokter 2: Spesialis Anak
-            Doctor dokter2 = new Doctor("D002","Sari Dewi","P","081234567891","Anak",
-                "SIP-002");
-
+            Doctor dokter2 = new Doctor("D002","Sari Dewi","P","081234567891","Anak", "SIP-002");
             // Dokter 3: Spesialis Bedah
-            Doctor dokter3 = new Doctor("D003","Budi Santoso","L","081234567892","Bedah",
-                "SIP-003");
+            Doctor dokter3 = new Doctor("D003","Budi Santoso","L","081234567892","Bedah", "SIP-003");
 
             // Perawat 1: Shift Pagi, ICU
-            Nurse perawat1 = new Nurse("N001","Rina Wati","P","082111111111","Pagi",
-                "ICU");
-
+            Nurse perawat1 = new Nurse("N001","Rina Wati","P","082111111111","Pagi", "ICU");
             // Perawat 2: Shift Malam, Ruang Melati
-            Nurse perawat2 = new Nurse("N002","Hendra Putra","L","082111111112",
-                "Malam","Ruang Melati");
+            Nurse perawat2 = new Nurse("N002","Hendra Putra","L","082111111112", "Malam","Ruang Melati");
 
             // Ruang VIP: kapasitas 1, Rp750.000/malam
             Room ruangVIP = new Room("R201", "VIP", 1, 750000);
-
             // Ruang Kelas 1: kapasitas 3, Rp350.000/malam
             Room ruangKelas1 = new Room("R302", "Kelas 2", 3, 350000);
-
             // Ruang ICU: kapasitas 2, Rp1.500.000/malam
             Room ruangICU = new Room("R103", "ICU", 2, 1500000);
 
@@ -47,11 +49,10 @@ public class MHospital {
             Patient pasien1 = new Patient("P001","Budi Hartono","L","085111111111","O");
             // Pasien 2: Dewi Rahayu, gol. darah A
             Patient pasien2 = new Patient("P002","Dewi Rahayu","P","085111111112","A");
-
             // Pasien 3: Agus Setiawan, gol. darah B
             Patient pasien3 = new Patient("P003","Agus Setiawan","L","085111111113","B");
             
-            //Daftarkan semua objek ke rumah sakit
+            // Daftarkan semua objek ke rumah sakit
             hospital.addDoctor(dokter1);
             hospital.addDoctor(dokter2);
             hospital.addDoctor(dokter3);
@@ -65,17 +66,11 @@ public class MHospital {
             hospital.registerPatient(pasien3);
 
             // Appointment 1: Pasien 1 dengan Dokter 1
-            Appointment apt1 = new Appointment("APT001",pasien1,dokter1,LocalDate.of(2026, 4, 1),
-                "08:00");
-
+            Appointment apt1 = new Appointment("APT001",pasien1,dokter1,LocalDate.of(2026, 4, 1), "08:00");
             // Appointment 2: Pasien 2 dengan Dokter 2
-            Appointment apt2 = new Appointment("APT002",pasien2,dokter2,LocalDate.of(2026, 4, 2),
-                "10:00");
-
-            // Appointment 3: Pasien 3 dengan Dokter 1, 
-            // Dokter1 masih tersedia karena slot < 8
-            Appointment apt3 = new Appointment("APT003",pasien3,dokter1,LocalDate.of(2026, 4, 1),
-                "09:00");
+            Appointment apt2 = new Appointment("APT002",pasien2,dokter2,LocalDate.of(2026, 4, 2), "10:00");
+            // Appointment 3: Pasien 3 dengan Dokter 1
+            Appointment apt3 = new Appointment("APT003",pasien3,dokter1,LocalDate.of(2026, 4, 1), "09:00");
 
             // Pasien 1
             pasien1.receiveExamination(dokter1);
@@ -101,7 +96,6 @@ public class MHospital {
             perawat1.monitorPatient(pasien1);
             perawat2.assistDoctor(dokter3);
             perawat2.monitorPatient(pasien3);
-
            
             ruangVIP.checkIn(pasien1);
             ruangKelas1.checkIn(pasien2);
@@ -118,7 +112,7 @@ public class MHospital {
             Bill tagihan2 = new Bill("BILL002", pasien2);
             tagihan2.addItem("Biaya Konsultasi Dokter Anak", 250000);          
             tagihan2.addItem("Biaya Kamar Kelas 1", 350000);                   
-            tagihan2.addItem("Antibiotik", 45000, 5);                         
+            tagihan2.addItem("Antibiotik", 45000, 5);                          
             tagihan2.addItem("Vitamin C", 15000, 10);                          
 
             // Tagihan Pasien 3 
@@ -128,12 +122,12 @@ public class MHospital {
             tagihan3.addItem("Biaya Operasi Appendektomi", 5000000);           
             tagihan3.addItem("Obat Pasca Operasi", 75000, 7);                  
 
-            //Bayar tagihan
+            // Bayar tagihan
             tagihan1.pay();
             tagihan2.pay();
             tagihan3.pay();
 
-            //Update status appointment
+            // Update status appointment
             apt1.complete();  // Selesai
             apt2.cancel();    // Dibatalkan
             apt3.complete();  // Selesai
@@ -143,7 +137,7 @@ public class MHospital {
             ruangKelas1.checkOut(pasien2);
             ruangICU.checkOut(pasien3);
 
-            //tampilkan informasi semua data yang sudah dibuat
+            // Tampilkan informasi semua data yang sudah dibuat di konsol terminal
             System.out.println("******* DATA RUMAH SAKIT *******");
             hospital.printSummary();
             System.out.println();
@@ -203,12 +197,32 @@ public class MHospital {
 
             System.out.println("******* PENERAPAN FIND DOCTOR & FIND ROOM *******");
             Doctor ditemukan = hospital.findDoctor("D002");
-            System.out.println("Dokter ditemukan: " + ditemukan.getName()
-                + " | Spesialisasi: " + ditemukan.getSpecialization());
+            System.out.println("Dokter ditemukan: " + ditemukan.getName() + " | Spesialisasi: " + ditemukan.getSpecialization());
             Room ruanganTersedia = hospital.findAvailableRoom("VIP");
-            System.out.println("Ruangan tersedia: " + ruanganTersedia.getRoomType()
-                + " | Harga: Rp" + ruanganTersedia.getPricePerNight() + "/malam");
+            System.out.println("Ruangan tersedia: " + ruanganTersedia.getRoomType() + " | Harga: Rp" + ruanganTersedia.getPricePerNight() + "/malam");
             System.out.println();
+
+            // =================================================================
+            // PROSES EKSEKUSI PERSISTENSI KE DATABASE MYSQL (Sinkronisasi Akhir)
+            // =================================================================
+            System.out.println("=== MENJALANKAN SINKRONISASI KE DATABASE VIA DAO ===");
+            
+            // Simpan semua entitas Person (Dokter, Perawat, Pasien) secara berulang
+            for (Person orang : semuaOrang) {
+                manager.getHospitalDAO().savePerson(orang);
+            }
+            
+            // Simpan data ruangan operasional
+            manager.getHospitalDAO().saveRoom(ruangVIP);
+            manager.getHospitalDAO().saveRoom(ruangKelas1);
+            manager.getHospitalDAO().saveRoom(ruangICU);
+            
+            // Simpan data appointment penting
+            manager.getHospitalDAO().saveAppointment(apt1);
+            manager.getHospitalDAO().saveAppointment(apt2);
+            manager.getHospitalDAO().saveAppointment(apt3);
+
+            System.out.println("\n[SUKSES SINKRONISASI] Seluruh simulasi objek Kelompok 6 berhasil masuk ke database pbo!");
 
         } catch (Exception e) {
             System.out.println("Error tidak terduga: " + e.getMessage());
