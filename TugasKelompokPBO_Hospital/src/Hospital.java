@@ -78,6 +78,13 @@ public class Hospital {
         System.out.println("Rooms: " + rooms.size());
         System.out.println("Patients: " + patients.size());
     }
- 
+
+    // =============================================
+    // =============== Method Generk ===============
+    // =============================================
+    // Generic method untuk menampilkan data apapun
+    public <T> void printGenericData(T data) {
+        System.out.println("Data : " + data);
+    }
   
 }
