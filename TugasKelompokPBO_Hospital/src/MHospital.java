@@ -298,6 +298,59 @@ public class MHospital {
             hospital.printGenericData(pasien1.getName());
             hospital.printGenericData(1500000);
             System.out.println();
+
+            // ===========================================================
+            // =================== Lintas Paradigma ======================
+            // ===========================================================
+            System.out.println("******* LINTAS PARADIGMA *******");
+            
+            // 1. OOP
+            // Menggunakan objek Patient, Doctor, Hospital, dan DataManager
+
+            // 2. Generik
+            // DataManager<Patient> digunakan untuk menyimpan data pasien
+            DataManager<Patient> dataPasienLintas = new DataManager<>();
+            dataPasienLintas.addData(pasien1);
+            dataPasienLintas.addData(pasien2);
+            dataPasienLintas.addData(pasien3);
+
+            // 3. Fungsional
+            // Menggunakan lambda expression dan Predicate untuk memfilter pasien
+            System.out.println("******* LAMBDA DAN THREAD *******\n");
+            System.out.println("Pasien dengan golongan darah O:");
+            dataPasienLintas.getAllData()
+                .stream()
+                .filter(p -> p.getBloodType().equalsIgnoreCase("O"))
+                .forEach(p -> System.out.println("- " + p.getName()));
+
+            // 4. Konkuren
+            // Membuat beberapa thread untuk menjalankan laporan secara bersamaan.
+            Thread reportGolDarahO = new Thread(
+                new HospitalReportTask(
+                    "Laporan Pasien Golongan Darah O",
+                    dataPasienLintas,
+                    p -> p.getBloodType().equalsIgnoreCase("O")
+                ),
+                "Report-1"
+            );
+            
+            Thread reportAdaRiwayat = new Thread(
+                new HospitalReportTask(
+                    "Laporan Pasien yang Sudah Diperiksa",
+                    dataPasienLintas,
+                    p -> !p.getMedicalHistory().isEmpty()
+                ),
+                "Report-2"
+            );
+            
+            reportGolDarahO.start();
+            reportAdaRiwayat.start();
+            
+            reportGolDarahO.join();
+            reportAdaRiwayat.join();
+            
+            System.out.println("Lintas paradigma selesai dijalankan.");
+            System.out.println();
  
         } catch (Exception e) {
             System.out.println("Error tidak terduga: " + e.getMessage());
